@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -168,3 +169,19 @@ cython_debug/
 # NPM
 node_modules
 
+=======
+*.tar
+*.tar.*
+*.jar
+*.exe
+*.msi
+*.deb
+*.zip
+*.tgz
+*.log
+*.log.*
+*.sig
+
+pkg/
+src/
+>>>>>>> 7c397799674d46645dd32d1b9699a0c19653326f
