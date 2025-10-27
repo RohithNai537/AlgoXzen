@@ -30,10 +30,10 @@ Developers and creators on blockchain platforms often face challenges such as:
 
 ## 📸 Screenshots
 
-Here’s a preview of the **AlgoBounty Dashboard** in action:
+Here’s a preview of the **AlgoXzen Dashboard** in action:
 
 <p align="center">
-  <img src="./projects/task_bountys-frontend/public/Task Bounty Dashboard.png" alt="AlgoBounty Dashboard Screenshot" width="80%">
+  <img src="projects/AlgoXzen-frontend/public/algoxzen_dashboard.png" alt="AlgoXzen Dashboard Screenshot" width="80%">
 </p>
 
 ## 🌟 Key Features
