@@ -103,6 +103,16 @@ class AlgoXzenApp(Application):
             output.set(pt.Int(1))
         ])
 
+        @external
+    def reassign_document_owner(self, doc_id: pt.abi.Uint64, new_owner: pt.abi.Address, *, output: pt.abi.Bool):
+        """Reassign document ownership (only creator/admin)"""
+        return pt.Seq([
+            pt.Assert(pt.Txn.sender() == self.creator.get()),
+            self.document_owner[doc_id.get()].set(new_owner.get()),
+            output.set(pt.Int(1))
+        ])
+
+
     @external
     def debug_log(self, log_id: pt.abi.Uint64, message: pt.abi.String, *, output: pt.abi.Bool):
         """Record a debug message"""
