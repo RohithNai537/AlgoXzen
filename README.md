@@ -44,8 +44,7 @@ Use this tool to verify your contracts/assets:
 Replace the placeholder values below after deployment:
 
 - **Smart Contract Application ID:** `749707480`
-- **ASA / NFT Asset ID:** `<ASSET_ID>`
-- 
+
 **Explorer Links:**
 
 - AlgoExplorer (app):  
