@@ -29,6 +29,36 @@ Developers and creators on blockchain platforms often face challenges such as:
 
 ---
 
+## 🌐 Deployed Frontend
+
+**Production URL:**  
+https://algoxzen.netlify.app/
+
+---
+
+## 🔗 Deployed Contracts & Assets (TestNet)
+
+Use this tool to verify your contracts/assets:  
+👉 https://lora.algokit.io/testnet
+
+Replace the placeholder values below after deployment:
+
+- **Smart Contract Application ID:** `<APP_ID>`
+- **ASA / NFT Asset ID:** `<ASSET_ID>`
+- **IPFS CID:** `<CID>`
+
+**Explorer Links:**
+
+- AlgoExplorer (app):  
+  https://testnet.algoexplorer.io/application/<APP_ID>
+
+- AlgoExplorer (asset):  
+  https://testnet.algoexplorer.io/asset/<ASSET_ID>
+
+- Lora Verification:  
+  https://lora.algokit.io/testnet/<your-link>
+
+
 ## 📸 Screenshots
 
 Here’s a preview of the *AlgoXzen Dashboard* in action:
