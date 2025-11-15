@@ -1,0 +1,236 @@
+#pragma version 11
+#pragma typetrack false
+
+// algopy.arc4.ARC4Contract.approval_program() -> uint64:
+main:
+    intcblock 0 1 2
+    bytecblock "last_hash" "" "last_title" "last_desc" "owner"
+    // smart_contracts/smart_contracts/contract.py:5
+    // class SmartContracts(ARC4Contract):
+    txn NumAppArgs
+    bz main___algopy_default_create@10
+    txn OnCompletion
+    !
+    assert // OnCompletion must be NoOp
+    txn ApplicationID
+    assert
+    pushbytess 0x0c10ab0b 0x19f30aa0 0xa9ae7627 // method "init_app()void", method "verify_and_pay(string,string,string)string", method "get_last()string"
+    txna ApplicationArgs 0
+    match init_app verify_and_pay get_last
+    err
+
+main___algopy_default_create@10:
+    txn OnCompletion
+    !
+    txn ApplicationID
+    !
+    &&
+    assert // OnCompletion must be NoOp && can only call when creating
+    intc_1 // 1
+    return
+
+
+// smart_contracts.smart_contracts.contract.SmartContracts.init_app[routing]() -> void:
+init_app:
+    // smart_contracts/smart_contracts/contract.py:18
+    // self.owner = Txn.sender
+    bytec 4 // "owner"
+    txn Sender
+    app_global_put
+    // smart_contracts/smart_contracts/contract.py:19
+    // self.last_hash = String("")
+    bytec_0 // "last_hash"
+    bytec_1 // ""
+    app_global_put
+    // smart_contracts/smart_contracts/contract.py:20
+    // self.last_title = String("")
+    bytec_2 // "last_title"
+    bytec_1 // ""
+    app_global_put
+    // smart_contracts/smart_contracts/contract.py:22
+    // self.last_desc = String("")
+    bytec_3 // "last_desc"
+    bytec_1 // ""
+    app_global_put
+    // smart_contracts/smart_contracts/contract.py:13-16
+    // # -----------------------------------------------------
+    // # INIT METHOD (Called once after deploy)
+    // # -----------------------------------------------------
+    // @arc4.abimethod
+    intc_1 // 1
+    return
+
+
+// smart_contracts.smart_contracts.contract.SmartContracts.verify_and_pay[routing]() -> void:
+verify_and_pay:
+    // smart_contracts/smart_contracts/contract.py:24-27
+    // # -----------------------------------------------------
+    // # MAIN METHOD - VERIFY & PAY
+    // # -----------------------------------------------------
+    // @arc4.abimethod
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 3
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    // smart_contracts/smart_contracts/contract.py:32
+    // assert Txn.amount >= PLATFORM_FEE, "INSUFFICIENT_FEE"
+    txn Amount
+    // smart_contracts/smart_contracts/contract.py:29-30
+    // # Platform fee: 0.2 ALGO
+    // PLATFORM_FEE = UInt64(200_000)
+    pushint 200000 // 200000
+    // smart_contracts/smart_contracts/contract.py:32
+    // assert Txn.amount >= PLATFORM_FEE, "INSUFFICIENT_FEE"
+    >=
+    assert // INSUFFICIENT_FEE
+    // smart_contracts/smart_contracts/contract.py:34
+    // self.last_hash = file_hash
+    bytec_0 // "last_hash"
+    uncover 3
+    app_global_put
+    // smart_contracts/smart_contracts/contract.py:35
+    // self.last_title = title
+    bytec_2 // "last_title"
+    uncover 2
+    app_global_put
+    // smart_contracts/smart_contracts/contract.py:36
+    // self.last_desc = description
+    bytec_3 // "last_desc"
+    swap
+    app_global_put
+    // smart_contracts/smart_contracts/contract.py:38-42
+    // # Payment via Inner Transaction
+    // itxn.Payment(
+    //     receiver=self.owner,
+    //     amount=Txn.amount,
+    // ).submit()
+    itxn_begin
+    // smart_contracts/smart_contracts/contract.py:40
+    // receiver=self.owner,
+    intc_0 // 0
+    bytec 4 // "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    // smart_contracts/smart_contracts/contract.py:41
+    // amount=Txn.amount,
+    txn Amount
+    itxn_field Amount
+    itxn_field Receiver
+    // smart_contracts/smart_contracts/contract.py:38-39
+    // # Payment via Inner Transaction
+    // itxn.Payment(
+    intc_1 // pay
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    // smart_contracts/smart_contracts/contract.py:38-42
+    // # Payment via Inner Transaction
+    // itxn.Payment(
+    //     receiver=self.owner,
+    //     amount=Txn.amount,
+    // ).submit()
+    itxn_submit
+    // smart_contracts/smart_contracts/contract.py:24-27
+    // # -----------------------------------------------------
+    // # MAIN METHOD - VERIFY & PAY
+    // # -----------------------------------------------------
+    // @arc4.abimethod
+    pushbytes 0x151f7c750018566572696669636174696f6e207375636365737366756c2e
+    log
+    intc_1 // 1
+    return
+
+
+// smart_contracts.smart_contracts.contract.SmartContracts.get_last[routing]() -> void:
+get_last:
+    // smart_contracts/smart_contracts/contract.py:52
+    // String("Hash: ") + self.last_hash +
+    intc_0 // 0
+    bytec_0 // "last_hash"
+    app_global_get_ex
+    assert // check self.last_hash exists
+    pushbytes "Hash: "
+    swap
+    concat
+    // smart_contracts/smart_contracts/contract.py:53
+    // String(" | Title: ") + self.last_title +
+    pushbytes " | Title: "
+    // smart_contracts/smart_contracts/contract.py:52-53
+    // String("Hash: ") + self.last_hash +
+    // String(" | Title: ") + self.last_title +
+    concat
+    // smart_contracts/smart_contracts/contract.py:53
+    // String(" | Title: ") + self.last_title +
+    intc_0 // 0
+    bytec_2 // "last_title"
+    app_global_get_ex
+    assert // check self.last_title exists
+    // smart_contracts/smart_contracts/contract.py:52-53
+    // String("Hash: ") + self.last_hash +
+    // String(" | Title: ") + self.last_title +
+    concat
+    // smart_contracts/smart_contracts/contract.py:54
+    // String(" | Desc: ") + self.last_desc
+    pushbytes " | Desc: "
+    // smart_contracts/smart_contracts/contract.py:52-54
+    // String("Hash: ") + self.last_hash +
+    // String(" | Title: ") + self.last_title +
+    // String(" | Desc: ") + self.last_desc
+    concat
+    // smart_contracts/smart_contracts/contract.py:54
+    // String(" | Desc: ") + self.last_desc
+    intc_0 // 0
+    bytec_3 // "last_desc"
+    app_global_get_ex
+    assert // check self.last_desc exists
+    // smart_contracts/smart_contracts/contract.py:52-54
+    // String("Hash: ") + self.last_hash +
+    // String(" | Title: ") + self.last_title +
+    // String(" | Desc: ") + self.last_desc
+    concat
+    // smart_contracts/smart_contracts/contract.py:46-49
+    // # -----------------------------------------------------
+    // # GETTER
+    // # -----------------------------------------------------
+    // @arc4.abimethod
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    pushbytes 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
