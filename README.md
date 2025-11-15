@@ -43,14 +43,14 @@ Use this tool to verify your contracts/assets:
 
 Replace the placeholder values below after deployment:
 
-- **Smart Contract Application ID:** `<APP_ID>`
+- **Smart Contract Application ID:** `749707480`
 - **ASA / NFT Asset ID:** `<ASSET_ID>`
 - **IPFS CID:** `<CID>`
 
 **Explorer Links:**
 
 - AlgoExplorer (app):  
-  https://testnet.algoexplorer.io/application/<APP_ID>
+   https://lora.algokit.io/testnet/application/749707480
 
 - AlgoExplorer (asset):  
   https://testnet.algoexplorer.io/asset/<ASSET_ID>
