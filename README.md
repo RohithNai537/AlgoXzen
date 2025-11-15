@@ -133,7 +133,23 @@ Before running the project locally, ensure you have:
 
 ## ⚡ Installation Steps
 
-*Clone the repository:*
+
+### Clone & Install
+
 ```bash
-git clone https://github.com/RohithNai537/AlgoXzen.git
+# Clone repository
+git clone https://github.com/<your-username>/AlgoXzen.git
 cd AlgoXzen
+
+# Frontend setup
+cd frontend
+npm install
+npm run dev
+
+# Smart contract setup
+cd ../contracts
+poetry install
+poetry run python -m smart_contracts build
+
+# Deploy contracts using AlgoKit
+algokit project run deploy
