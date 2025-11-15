@@ -53,9 +53,8 @@ Replace the placeholder values below after deployment:
 
 - AlgoExplorer (Testnet Activity/Transactions):  
   https://lora.algokit.io/testnet/account/DDYREIIAMRSXHL7LXNDNAI7ULUPPC2NY4TNPYVDEEHCH5WXAM76ABQQ5LE
-- Lora Verification:  
-  https://lora.algokit.io/testnet/<your-link>
-
+- ABI Method Verification:  
+  https://lora.algokit.io/testnet/transaction/7NK2KM4D7BDNJXFNPCKNEPDT44J3PSVM5G2J3TLFGHGZCVW6WG6Q
 
 ## 📸 Screenshots
 
