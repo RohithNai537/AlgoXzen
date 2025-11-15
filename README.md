@@ -1,6 +1,4 @@
-# <p align="center">
-  <img src="projects/AlgoXzen_dapp-frontend/src/AlgoXzen_Interface.png" width="30%" height="40%">
-</p>🚀 AlgoXzen – AI-Powered Blockchain & Developer Companion
+# 🚀 AlgoXzen – AI-Powered Blockchain & Developer Companion
 
 AlgoXzen is a next-generation AI assistant built on the Algorand blockchain that combines *multimodal document/media verification*, **smart contract development**, **blockchain exploration**, and **auditing** into a unified ecosystem.  
 It enables users to *upload, tokenize, and verify* documents, images, audio, and videos as NFTs/ASAs, while offering powerful *AI tools for developers* to create, debug, and deploy smart contracts using **AlgoKit** and **Algopy/PyTeal**.
