@@ -45,16 +45,14 @@ Replace the placeholder values below after deployment:
 
 - **Smart Contract Application ID:** `749707480`
 - **ASA / NFT Asset ID:** `<ASSET_ID>`
-- **IPFS CID:** `<CID>`
-
+- 
 **Explorer Links:**
 
 - AlgoExplorer (app):  
    https://lora.algokit.io/testnet/application/749707480
 
-- AlgoExplorer (asset):  
-  https://testnet.algoexplorer.io/asset/<ASSET_ID>
-
+- AlgoExplorer (Testnet Activity/Transactions):  
+  https://lora.algokit.io/testnet/account/DDYREIIAMRSXHL7LXNDNAI7ULUPPC2NY4TNPYVDEEHCH5WXAM76ABQQ5LE
 - Lora Verification:  
   https://lora.algokit.io/testnet/<your-link>
 
