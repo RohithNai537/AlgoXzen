@@ -34,7 +34,7 @@ Developers and creators on blockchain platforms often face challenges such as:
 Here’s a preview of the *AlgoXzen Dashboard* in action:
 
 <p align="center">
-  <img src="projects/AlgoXzen-frontend/public/algoxzen_dashboard.png" alt="AlgoXzen Dashboard Screenshot" width="80%">
+  <img src="projects/AlgoXzen_dapp-frontend/src/AlgoXzen_Interface.png" width="80%">
 </p>
 
 ## 🌟 Key Features
