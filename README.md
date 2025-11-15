@@ -110,6 +110,14 @@ Here’s a preview of the *AlgoXzen Dashboard* in action:
 
 ---
 
+## 📸 Algokit Explore Screenshots
+
+Here’s a preview of the *AlgoXzen Transactions* in action:
+
+<p align="center">
+  <img src="projects/AlgoXzen_dapp-frontend/src/transactions_explorer.png" width="80%">
+</p>
+
 ## ⚙️ Tech Stack
 
 ### 🌐 Frontend
