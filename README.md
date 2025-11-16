@@ -60,7 +60,7 @@ Replace the placeholder values below after deployment:
 Here’s a preview of the *AlgoXzen Dashboard* in action:
 
 <p align="center">
-  <img src="projects/AlgoXzen_dapp-frontend/src/AlgoXzen_Interface.png" width="80%">
+  <img src="projects/AlgoXzen_dapp-frontend/public/AlgoXzen_Interface.png" width="80%">
 </p>
 
 ## 🌟 Key Features
@@ -114,7 +114,7 @@ Here’s a preview of the *AlgoXzen Dashboard* in action:
 Here’s a preview of the *AlgoXzen Transactions* in action:
 
 <p align="center">
-  <img src="projects/AlgoXzen_dapp-frontend/src/transactions_explorer.png" width="80%">
+  <img src="projects/AlgoXzen_dapp-frontend/public/transactions_explorer.png" width="80%">
 </p>
 
 ## ⚙️ Tech Stack
